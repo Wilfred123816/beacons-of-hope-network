@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Leadership = () => {
   return (
-    <section className="section-padding bg-background" id="about">
+    <section id="leadership" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}

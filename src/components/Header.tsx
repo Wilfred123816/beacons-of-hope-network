@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "#hero" },
   { 
     label: "Our Impact", 
     href: "#impact",
@@ -12,13 +12,21 @@ const navItems = [
   },
   { 
     label: "Take Action", 
-    href: "#action",
+    href: "#take-action",
     dropdown: ["Donate", "Volunteer", "Partner With Us"]
   },
-  { label: "About Us", href: "#about" },
-  { label: "Stories of Hope", href: "#stories" },
-  { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "#mission" },
+  { label: "Stories of Hope", href: "#leadership" },
+  { label: "Contact", href: "#newsletter" },
 ];
+
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const element = document.querySelector(href);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -52,6 +60,7 @@ const Header = () => {
               >
                 <a
                   href={item.href}
+                  onClick={(e) => scrollToSection(e, item.href)}
                   className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
@@ -117,7 +126,10 @@ const Header = () => {
                     key={item.label}
                     href={item.href}
                     className="py-3 text-foreground font-medium border-b border-border last:border-0"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      scrollToSection(e, item.href);
+                      setMobileMenuOpen(false);
+                    }}
                   >
                     {item.label}
                   </a>

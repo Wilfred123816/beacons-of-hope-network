@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Mission = () => {
   return (
-    <section className="section-padding bg-background">
+    <section id="mission" className="section-padding bg-background">
       <div className="container-narrow mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

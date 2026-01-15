@@ -26,7 +26,7 @@ const actions = [
 
 const TakeAction = () => {
   return (
-    <section className="section-padding bg-background" id="action">
+    <section id="take-action" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
