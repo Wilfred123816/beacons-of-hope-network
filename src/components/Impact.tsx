@@ -22,7 +22,7 @@ const stats = [
 
 const Impact = () => {
   return (
-    <section className="relative min-h-[600px] flex items-center">
+    <section id="impact" className="relative min-h-[600px] flex items-center">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
