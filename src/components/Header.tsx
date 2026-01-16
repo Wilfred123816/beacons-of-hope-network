@@ -2,42 +2,62 @@ import { useState } from "react";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "#hero", isSection: true },
   { 
     label: "Our Impact", 
     href: "#impact",
+    isSection: true,
     dropdown: ["Education Programs", "Health Initiatives", "Community Development"]
   },
   { 
     label: "Take Action", 
-    href: "#take-action",
+    href: "/take-action",
+    isSection: false,
     dropdown: ["Donate", "Volunteer", "Partner With Us"]
   },
-  { label: "About Us", href: "#mission" },
-  { label: "Stories of Hope", href: "#leadership" },
-  { label: "Contact", href: "#newsletter" },
+  { label: "About Us", href: "#mission", isSection: true },
+  { label: "Stories of Hope", href: "#leadership", isSection: true },
+  { label: "Contact", href: "#newsletter", isSection: true },
 ];
-
-const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-  e.preventDefault();
-  const element = document.querySelector(href);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: typeof navItems[0]) => {
+    if (item.isSection) {
+      e.preventDefault();
+      // If we're not on the home page, navigate there first
+      if (location.pathname !== "/") {
+        navigate("/");
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          const element = document.querySelector(item.href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(item.href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+    // For non-section links (like /take-action), let the default Link behavior handle it
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm">
       <div className="container-narrow mx-auto">
         <div className="flex items-center justify-between py-4 px-4 md:px-8">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center">
               <span className="font-heading text-primary font-bold text-lg">BoH</span>
             </div>
@@ -47,7 +67,7 @@ const Header = () => {
               </h1>
               <p className="text-xs text-muted-foreground uppercase tracking-wider">Network</p>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
@@ -58,14 +78,24 @@ const Header = () => {
                 onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <a
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                  {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                </a>
+                {item.isSection ? (
+                  <a
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item)}
+                    className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                    {item.dropdown && <ChevronDown className="w-4 h-4" />}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                    {item.dropdown && <ChevronDown className="w-4 h-4" />}
+                  </Link>
+                )}
                 
                 {item.dropdown && activeDropdown === item.label && (
                   <motion.div
@@ -91,7 +121,9 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button className="btn-primary rounded-sm">Donate</Button>
+            <Link to="/take-action">
+              <Button className="btn-primary rounded-sm">Donate</Button>
+            </Link>
             <Button variant="outline" className="btn-outline-maroon rounded-sm">Contact</Button>
             <button className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
               <Search className="w-4 h-4" />
@@ -122,20 +154,33 @@ const Header = () => {
             >
               <nav className="flex flex-col py-4 px-4">
                 {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="py-3 text-foreground font-medium border-b border-border last:border-0"
-                    onClick={(e) => {
-                      scrollToSection(e, item.href);
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    {item.label}
-                  </a>
+                  item.isSection ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="py-3 text-foreground font-medium border-b border-border last:border-0"
+                      onClick={(e) => {
+                        handleNavClick(e, item);
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      to={item.href}
+                      className="py-3 text-foreground font-medium border-b border-border last:border-0"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )
                 ))}
                 <div className="flex gap-3 mt-4">
-                  <Button className="btn-primary rounded-sm flex-1">Donate</Button>
+                  <Link to="/take-action" className="flex-1">
+                    <Button className="btn-primary rounded-sm w-full">Donate</Button>
+                  </Link>
                   <Button variant="outline" className="btn-outline-maroon rounded-sm flex-1">Contact</Button>
                 </div>
               </nav>
