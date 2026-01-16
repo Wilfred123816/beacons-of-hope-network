@@ -5,12 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
-  { label: "Home", href: "#hero", isSection: true },
+  { label: "Home", href: "/", isSection: false },
   { 
-    label: "Our Impact", 
-    href: "#impact",
-    isSection: true,
-    dropdown: ["Education Programs", "Health Initiatives", "Community Development"]
+    label: "About Us", 
+    href: "/about",
+    isSection: false,
+    dropdown: ["Vision & Mission", "Core Values", "Theory of Change"]
+  },
+  { 
+    label: "Programs", 
+    href: "/programs",
+    isSection: false,
+    dropdown: ["Learning Hubs", "Mental Health", "Community Empowerment"]
   },
   { 
     label: "Take Action", 
@@ -18,8 +24,7 @@ const navItems = [
     isSection: false,
     dropdown: ["Donate", "Volunteer", "Partner With Us"]
   },
-  { label: "About Us", href: "#mission", isSection: true },
-  { label: "Stories of Hope", href: "#leadership", isSection: true },
+  { label: "Our Impact", href: "#impact", isSection: true },
   { label: "Contact", href: "#newsletter", isSection: true },
 ];
 
