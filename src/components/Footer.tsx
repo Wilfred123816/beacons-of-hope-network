@@ -1,12 +1,13 @@
 import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Our Programs", href: "#programs" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Programs", href: "/programs" },
   { label: "Stories of Hope", href: "#stories" },
-  { label: "Take Action", href: "#action" },
+  { label: "Take Action", href: "/take-action" },
   { label: "Resources", href: "#resources" },
 ];
 
@@ -43,12 +44,21 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('/') ? (
+                    <Link 
+                      to={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href}
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
