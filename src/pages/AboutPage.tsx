@@ -60,10 +60,10 @@ const objectives = [
 ];
 
 const pillars = [
-  "Innovative Education",
-  "Child Protection Strengthening",
-  "Mental Health",
-  "Home Based Community Empowerment",
+  "Education empowerment for vulnerable children and families",
+  "Youth empowerment and leadership development",
+  "Mental health and psychosocial wellbeing",
+  "Livelihood support through micro-financing and financial literacy",
 ];
 
 const AboutPage = () => {
@@ -173,15 +173,15 @@ const AboutPage = () => {
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p className="mb-4">
-                Beacons of Hope Network operates in rural Kisii. The organization focus is children and youth particularly girls and teenage mothers who comes from vulnerable families that continues to face heightened risks of school dropouts, explorations and poverty.
+                Beacons of Hope Network is a community-rooted, people-centered organization working to restore dignity, opportunity, and resilience among marginalized populations—particularly in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.
               </p>
               <p className="mb-4">
-                Girls and teenage mothers particularly are the most affected. Limited educational and livelihood support continue to perpetuate household stress, weakening child protection issues and loss of hope. These pressures further contributes to mental health among families and adolescents.
+                We are educators, community mobilizers, youth mentors, mental health advocates, and livelihood enablers united by one purpose: to move individuals and families from the margins to the center of opportunity.
               </p>
-              <p className="mb-6">
-                Anchored in the Sustainable Development Goals (1, 3, 4 and 8), and Kenyan Vision 2030, Beacons of Hope Network advances these challenges through 4 pillars:
+              <p className="mb-4">
+                Beacons of Hope Network is guided by the child protection policy and operates through an integrated development model that addresses four interconnected pillars:
               </p>
-              <div className="grid sm:grid-cols-2 gap-4 not-prose">
+              <div className="grid sm:grid-cols-2 gap-4 not-prose mb-6">
                 {pillars.map((pillar, index) => (
                   <motion.div
                     key={pillar}
@@ -192,12 +192,18 @@ const AboutPage = () => {
                     className="flex items-center gap-3 bg-secondary/10 p-4 rounded-sm"
                   >
                     <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground font-bold text-sm">
-                      ✔
+                      {index + 1}
                     </div>
-                    <span className="text-foreground font-medium">{pillar}</span>
+                    <span className="text-foreground font-medium text-sm">{pillar}</span>
                   </motion.div>
                 ))}
               </div>
+              <p className="mb-4">
+                Rather than delivering isolated services, Beacons of Hope works with communities, strengthening families, nurturing youth potential, reducing stigma, and building pathways to financial independence. Our approach values local leadership, accountability, and sustainability, ensuring that change is owned and sustained by the community itself.
+              </p>
+              <p className="font-medium text-foreground">
+                At our core, we are champions of dignity, inclusion, and social justice, lighting pathways of hope where exclusion, poverty, and silence once prevailed.
+              </p>
             </div>
           </motion.div>
         </div>
