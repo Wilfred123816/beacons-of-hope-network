@@ -19,6 +19,12 @@ const navItems = [
     dropdown: ["Learning Hubs", "Mental Health", "Community Empowerment"]
   },
   { 
+    label: "Resources", 
+    href: "/resources",
+    isSection: false,
+    dropdown: ["Education Empowerment", "Youth Empowerment", "Mental Health & Wellbeing"]
+  },
+  { 
     label: "Take Action", 
     href: "/take-action",
     isSection: false,
