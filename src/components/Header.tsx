@@ -25,6 +25,11 @@ const navItems = [
     dropdown: ["Education Empowerment", "Youth Empowerment", "Mental Health & Wellbeing"]
   },
   { 
+    label: "Stories of Hope", 
+    href: "/stories",
+    isSection: false
+  },
+  { 
     label: "Take Action", 
     href: "/take-action",
     isSection: false,

@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Our Programs", href: "/programs" },
-  { label: "Stories of Hope", href: "#stories" },
+  { label: "Stories of Hope", href: "/stories" },
   { label: "Take Action", href: "/take-action" },
-  { label: "Resources", href: "#resources" },
+  { label: "Resources", href: "/resources" },
 ];
 
 const socialLinks = [
