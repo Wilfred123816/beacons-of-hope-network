@@ -137,7 +137,7 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/take-action">
+            <Link to="/donate">
               <Button className="btn-primary rounded-sm">Donate</Button>
             </Link>
             <Button variant="outline" className="btn-outline-maroon rounded-sm">Contact</Button>
@@ -194,7 +194,7 @@ const Header = () => {
                   )
                 ))}
                 <div className="flex gap-3 mt-4">
-                  <Link to="/take-action" className="flex-1">
+                  <Link to="/donate" className="flex-1">
                     <Button className="btn-primary rounded-sm w-full">Donate</Button>
                   </Link>
                   <Button variant="outline" className="btn-outline-maroon rounded-sm flex-1">Contact</Button>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import youthImage from "@/assets/youth-celebration.jpg";
 
@@ -27,9 +28,11 @@ const CallToAction = () => {
           <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-secondary mb-6">
             The Power of Youth
           </h2>
-          <Button className="btn-primary text-lg px-10 py-6 rounded-sm">
-            Donate Today
-          </Button>
+          <Link to="/donate">
+            <Button className="btn-primary text-lg px-10 py-6 rounded-sm">
+              Donate Today
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 
@@ -50,9 +51,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button className="btn-primary text-lg px-10 py-6 rounded-sm">
-              Donate Today
-            </Button>
+            <Link to="/donate">
+              <Button className="btn-primary text-lg px-10 py-6 rounded-sm">
+                Donate Today
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>
