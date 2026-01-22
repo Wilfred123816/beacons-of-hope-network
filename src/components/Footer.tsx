@@ -12,11 +12,12 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Facebook, href: "https://www.facebook.com/share/1D3GTudquG/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/beaconsofhopenetwork?igsh=MWtvczlwNDE2cDZlaw==", label: "Instagram" },
+  // Using the Twitter icon for TikTok (Lucide doesn't include a TikTok icon)
+  { icon: Twitter, href: "https://www.tiktok.com/@beaconsof.hope.ne?_r=1&_t=ZS-93Fq6rSKQi5", label: "TikTok" },
+  { icon: Linkedin, href: "http://www.linkedin.com/in/beaconsof-hopenetwork-a628913a7", label: "LinkedIn" },
+  { icon: Youtube, href: "https://youtube.com/@beaconsofhopenetwork?si=mzyXKdF-WmZ3ln7r", label: "YouTube" },
 ];
 
 const Footer = () => {
@@ -82,11 +83,29 @@ const Footer = () => {
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>info@beaconsofhope.org</span>
+                <a
+                  href="mailto:beaconsofhopenetwork@gmail.com"
+                  className="hover:text-primary transition-colors"
+                >
+                  beaconsofhopenetwork@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+254729508496" className="hover:text-primary transition-colors">
+                    0729508496
+                  </a>
+                  <a href="tel:+254716524476" className="hover:text-primary transition-colors">
+                    0716524476
+                  </a>
+                  <a href="tel:+254113596287" className="hover:text-primary transition-colors">
+                    0113596287
+                  </a>
+                </div>
+              </div>
+              <div className="text-sm">
+                <div className="text-muted-foreground">P.O. Box 995-40200, Kisii</div>
               </div>
             </div>
           </div>

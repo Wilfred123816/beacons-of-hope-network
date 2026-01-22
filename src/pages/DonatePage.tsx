@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     question: "Who should I contact if I have additional questions?",
-    answer: "For any questions, please email us at info@beaconsofhope.org or call +1 (555) 123-4567. Our team is happy to help!"
+    answer: "For any questions, please email beaconsofhopenetwork@gmail.com or call 0729508496 / 0716524476 / 0113596287. Our team is happy to help!"
   },
 ];
 
