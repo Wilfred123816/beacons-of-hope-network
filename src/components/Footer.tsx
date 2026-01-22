@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, Video } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -14,8 +14,7 @@ const quickLinks = [
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/share/1D3GTudquG/", label: "Facebook" },
   { icon: Instagram, href: "https://www.instagram.com/beaconsofhopenetwork?igsh=MWtvczlwNDE2cDZlaw==", label: "Instagram" },
-  // Using the Twitter icon for TikTok (Lucide doesn't include a TikTok icon)
-  { icon: Twitter, href: "https://www.tiktok.com/@beaconsof.hope.ne?_r=1&_t=ZS-93Fq6rSKQi5", label: "TikTok" },
+  { icon: Video, href: "https://www.tiktok.com/@beaconsof.hope.ne?_r=1&_t=ZS-93Fq6rSKQi5", label: "TikTok" },
   { icon: Linkedin, href: "http://www.linkedin.com/in/beaconsof-hopenetwork-a628913a7", label: "LinkedIn" },
   { icon: Youtube, href: "https://youtube.com/@beaconsofhopenetwork?si=mzyXKdF-WmZ3ln7r", label: "YouTube" },
 ];

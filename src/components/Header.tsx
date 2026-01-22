@@ -36,7 +36,7 @@ const navItems = [
     dropdown: ["Donate", "Volunteer", "Partner With Us"]
   },
   { label: "Our Impact", href: "#impact", isSection: true },
-  { label: "Contact", href: "#newsletter", isSection: true },
+  { label: "Contacts", href: "/contact", isSection: false },
 ];
 
 const Header = () => {
@@ -140,7 +140,9 @@ const Header = () => {
             <Link to="/donate">
               <Button className="btn-primary rounded-sm">Donate</Button>
             </Link>
-            <Button variant="outline" className="btn-outline-maroon rounded-sm">Contact</Button>
+            <Link to="/contact">
+              <Button variant="outline" className="btn-outline-maroon rounded-sm">Contacts</Button>
+            </Link>
             <button className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground">
               <Search className="w-4 h-4" />
             </button>
@@ -197,7 +199,9 @@ const Header = () => {
                   <Link to="/donate" className="flex-1">
                     <Button className="btn-primary rounded-sm w-full">Donate</Button>
                   </Link>
-                  <Button variant="outline" className="btn-outline-maroon rounded-sm flex-1">Contact</Button>
+                  <Link to="/contact" className="flex-1" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="outline" className="btn-outline-maroon rounded-sm w-full">Contacts</Button>
+                  </Link>
                 </div>
               </nav>
             </motion.div>
