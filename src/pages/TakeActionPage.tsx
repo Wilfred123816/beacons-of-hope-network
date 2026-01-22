@@ -113,7 +113,7 @@ const TakeActionPage = () => {
               Every action counts. Whether you volunteer your time, donate resources, or simply share our story, you're helping us create lasting change in communities.
             </p>
             <a
-              href="mailto:contact@beaconsofhope.org"
+              href="mailto:beaconsofhopenetwork@gmail.com"
               className="inline-block bg-primary-foreground text-secondary px-8 py-4 rounded-sm font-heading font-bold text-lg hover:bg-primary-foreground/90 transition-colors"
             >
               Get In Touch
