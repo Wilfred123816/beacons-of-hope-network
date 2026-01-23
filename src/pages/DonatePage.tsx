@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     question: "Can I donate through M-PESA?",
-    answer: "Yes! For M-Pesa donations, use our Paybill Number: 123456 and Account Name: BOHNETWORK. This is a great option for donors in Kenya and East Africa."
+    answer: "Yes! For M-Pesa donations, use Paybill Business Number: 522522 and Account Number: 1348392789. This is a great option for donors in Kenya and East Africa."
   },
   {
     question: "What impact will my donation have?",
@@ -138,7 +138,7 @@ const DonationForm = () => {
     if (paymentMethod === "mpesa") {
       toast({
         title: "M-Pesa Instructions",
-        description: "Please use Paybill: 123456, Account: BOHNETWORK to complete your donation.",
+        description: "Please use Paybill: 522522, Account: 1348392789 to complete your donation.",
       });
       return;
     }
@@ -290,11 +290,11 @@ const DonationForm = () => {
             </li>
             <li className="flex gap-3">
               <span className="font-bold text-secondary">3.</span>
-              Enter Business Number: <strong className="text-secondary">123456</strong>
+              Enter Business Number: <strong className="text-secondary">522522</strong>
             </li>
             <li className="flex gap-3">
               <span className="font-bold text-secondary">4.</span>
-              Enter Account Name: <strong className="text-secondary">BOHNETWORK</strong>
+              Enter Account Number: <strong className="text-secondary">1348392789</strong>
             </li>
             <li className="flex gap-3">
               <span className="font-bold text-secondary">5.</span>
