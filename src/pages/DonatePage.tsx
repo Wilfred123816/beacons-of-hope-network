@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "Can I donate through PayPal?",
-    answer: "Yes! If you're outside of the US, we recommend donating via our PayPal Giving Fund for easier international transactions."
+    answer: "Yes! If you're outside of Kenya, we recommend donating via our PayPal Giving Fund for easier international transactions."
   },
   {
     question: "Can I donate through UNC?",
@@ -103,7 +103,7 @@ const DonationForm = () => {
     city: "",
     state: "",
     postal: "",
-    country: "United States",
+    country: "Kenya",
     newsletter: false,
     smsConsent: false,
     isRecurring: false,
@@ -203,7 +203,7 @@ const DonationForm = () => {
         city: "",
         state: "",
         postal: "",
-        country: "United States",
+        country: "Kenya",
         newsletter: false,
         smsConsent: false,
         isRecurring: false,
