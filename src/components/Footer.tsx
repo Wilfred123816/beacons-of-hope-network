@@ -23,19 +23,30 @@ const Footer = () => {
   return (
     <footer className="bg-background border-t border-border">
       <div className="container-narrow mx-auto px-4 md:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* About Column */}
-          <div>
+          <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-16 h-16 rounded-full border-2 border-primary flex items-center justify-center">
                 <span className="font-heading text-primary font-bold text-xl">BoH</span>
               </div>
             </div>
             <h3 className="font-semibold text-foreground mb-4">Who We Are</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Beacons of Hope Network is a registered nonprofit organization dedicated to 
-              empowering youth through education, health, and community development programs.
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              Beacons of Hope Network is a community-rooted, people-centered organization working to restore dignity, opportunity, and resilience among marginalized populations—particularly in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.
             </p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              We are educators, community mobilizers, youth mentors, mental health advocates, and livelihood enablers united by one purpose: to move individuals and families from the margins to the center of opportunity.
+            </p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+              Guided by our child protection policy, we operate through an integrated development model addressing four interconnected pillars:
+            </p>
+            <ul className="text-muted-foreground text-sm leading-relaxed space-y-1 list-disc list-inside">
+              <li>Education empowerment for vulnerable children and families</li>
+              <li>Youth empowerment and leadership development</li>
+              <li>Mental health and psychosocial wellbeing</li>
+              <li>Livelihood support through micro-financing and financial literacy</li>
+            </ul>
           </div>
 
           {/* Quick Links */}

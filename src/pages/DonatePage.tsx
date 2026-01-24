@@ -35,11 +35,7 @@ const faqs = [
   },
   {
     question: "Can I donate through PayPal?",
-    answer: "Yes! If you're outside of Kenya, we recommend donating via our PayPal Giving Fund for easier international transactions."
-  },
-  {
-    question: "Can I donate through UNC?",
-    answer: "Yes, Beacons of Hope Network is affiliated with the University of North Carolina at Chapel Hill. You can donate to our organization through UNC's donation platform using code 045445."
+    answer: "Yes! You can donate via our PayPal Giving Fund for easier international transactions."
   },
   {
     question: "Can I donate through M-PESA?",
@@ -48,10 +44,6 @@ const faqs = [
   {
     question: "What impact will my donation have?",
     answer: "Your donation directly supports youth empowerment programs including education scholarships, mental health support, life skills training, and community outreach initiatives. Every contribution helps transform lives in underserved communities."
-  },
-  {
-    question: "What is the Junction?",
-    answer: "The Junction is our community center that serves as a hub for youth programs, counseling services, and community gatherings. It's where transformation happens daily."
   },
   {
     question: "What about administrative costs?",
