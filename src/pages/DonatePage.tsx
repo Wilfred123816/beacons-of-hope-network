@@ -584,10 +584,10 @@ const DonatePage = () => {
               Donate
             </span>
             <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl mb-4">
-              Your Support Empowers Youth
+              Your Support Empowers, Restores Dignity and Promotes Resilience
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
-              Every donation helps transform lives in slums across Kenya through education, mentorship, and community development.
+              Among marginalized populations
             </p>
           </motion.div>
         </div>
@@ -605,11 +605,11 @@ const DonatePage = () => {
             >
               <div className="text-center mb-8">
                 <h2 className="heading-display text-2xl md:text-3xl text-foreground mb-2">
-                  Empowering Youth
+                  Empowering Youth and Vulnerable Populations
                 </h2>
-                <p className="text-secondary font-semibold">in slums in Kenya.</p>
+                <p className="text-secondary font-semibold">Particularly in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.</p>
                 <p className="text-sm text-muted-foreground mt-4">
-                  If outside of the US, we recommend donating via our PayPal Giving Fund.
+                  If outside of Kenya, we recommend donating via Credit card.
                 </p>
               </div>
 
