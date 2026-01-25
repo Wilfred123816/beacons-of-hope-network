@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
@@ -675,12 +676,12 @@ const DonatePage = () => {
             <div className="inline-flex items-center gap-3 bg-secondary/10 border border-secondary/20 rounded-sm px-6 py-4">
               <HelpCircle className="w-6 h-6 text-secondary" />
               <span className="text-foreground font-medium">Have Questions?</span>
-              <a 
-                href="mailto:info@beaconsofhope.org" 
+              <Link 
+                to="/contact" 
                 className="text-secondary font-semibold hover:underline"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
