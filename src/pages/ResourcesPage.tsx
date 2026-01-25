@@ -26,13 +26,13 @@ Young men and women who were once disengaged are now actively contributing to ho
   },
   {
     icon: Heart,
-    title: "Mental Health & Wellbeing",
-    subtitle: "Healing Families, Reducing Stigma in Birongo",
-    content: `Mental health challenges in Birongo and Giachere Sub-Counties often remain unaddressed due to stigma, lack of awareness, and limited access to support. Beacons of Hope Network integrates mental health and psychosocial wellbeing into its community programming to ensure holistic development.
+    title: "Mental Health Psychosocial Support (MHPSS)",
+    subtitle: "Healing Families, Reducing Stigma",
+    content: `Beacons of Hope Network promotes mental health and psychosocial wellbeing by using sports and learning institutions as safe and trusted platforms to reach children and youth in Kisii County. Many learners experience stress, trauma, and emotional challenges that remain unaddressed due to stigma and limited access to care. By integrating mental health awareness into sports, play, and everyday school life, we normalize wellbeing conversations and encourage early help-seeking in a culturally appropriate way.
 
-Through community dialogues, family sensitization sessions, and peer support forums, individuals and families learn to recognize mental health challenges and seek help early. Safe spaces are created for sharing experiences related to stress, trauma, and emotional distress, while referral pathways are strengthened with local health providers.
+Through sports-based activities and school partnerships, children build resilience, emotional regulation, and positive coping skills while teachers are trained in mental health literacy and basic psychosocial support. Safe spaces for dialogue and strengthened referral pathways ensure children and families access timely care.
 
-As stigma reduces, families become more supportive, and individuals regain emotional stability and social inclusion. Mental wellbeing becomes a foundation for success in education, youth engagement, and livelihoods.`
+Where higher-level care is needed, Beacons of Hope Network strengthens referral pathways with local health providers, ensuring children and families access appropriate support while remaining connected to their communities.`
   }
 ];
 

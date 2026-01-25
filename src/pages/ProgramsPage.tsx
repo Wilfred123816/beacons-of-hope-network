@@ -18,15 +18,15 @@ const programs = [
   },
   {
     icon: Brain,
-    title: "Mental Health",
-    description: "The organization is on the process of establishing a community-run space for peer mental-support groups, art therapy, and craft workshops.",
+    title: "Mental Health Psychosocial Support (MHPSS)",
+    description: "Beacons of Hope Network promotes mental health and psychosocial wellbeing by using sports and learning institutions as safe and trusted platforms to reach children and youth in Kisii County.",
     features: [
-      "Peer mental-support groups",
-      "Art therapy sessions",
-      "Craft workshops",
-      "Healing space and incubator for creative micro-ventures",
-      "Programs conducted by skilled psychologists and trained artists",
-      "Promoting both well-being and sustainable livelihoods",
+      "Integrating mental health awareness into sports, play, and everyday school life",
+      "Normalizing wellbeing conversations and encouraging early help-seeking",
+      "Building resilience, emotional regulation, and positive coping skills through sports-based activities",
+      "Training teachers in mental health literacy and basic psychosocial support",
+      "Creating safe spaces for dialogue and strengthened referral pathways",
+      "Connecting families to local health providers for higher-level care when needed",
     ],
   },
   {
