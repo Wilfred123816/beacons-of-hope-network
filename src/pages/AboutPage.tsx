@@ -103,7 +103,7 @@ const AboutPage = () => {
             >
               <h2 className="heading-display text-2xl md:text-3xl mb-4">Our Vision</h2>
               <p className="text-secondary-foreground/90 leading-relaxed">
-                A world where individuals and communities flourish with knowledge, creativity, wellness, and sustainable living—guided by hope and empowered for transformation.
+                A future where vulnerable children, youth, and families break cycles of poverty and exclusion through learning, wellbeing, and sustainable livelihoods.
               </p>
             </motion.div>
             
@@ -116,7 +116,7 @@ const AboutPage = () => {
             >
               <h2 className="heading-display text-2xl md:text-3xl mb-4">Our Mission</h2>
               <p className="text-primary-foreground/90 leading-relaxed">
-                To serve as a guiding light for holistic empowerment by establishing education hubs for mental health through art and sports and community-led support.
+                To empower vulnerable communities to learn, heal, and lead by building community-driven learning hubs that integrate education, mental health, protection and youth empowerment.
               </p>
             </motion.div>
           </div>
