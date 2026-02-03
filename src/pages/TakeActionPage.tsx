@@ -52,7 +52,7 @@ const TakeActionPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 maroon-bg text-primary-foreground">
+      <section className="pt-32 pb-16 blue-bg text-primary-foreground">
         <div className="container-narrow mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -98,7 +98,7 @@ const TakeActionPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding teal-bg text-primary-foreground">
+      <section className="section-padding green-bg text-primary-foreground">
         <div className="container-narrow mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

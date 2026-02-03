@@ -47,9 +47,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        maroon: "hsl(var(--maroon))",
-        teal: "hsl(var(--teal))",
-        gold: "hsl(var(--gold))",
+        blue: "hsl(var(--blue))",
+        harlequin: "hsl(var(--harlequin))",
+        orange: "hsl(var(--orange))",
         cream: "hsl(var(--cream))",
       },
       fontFamily: {

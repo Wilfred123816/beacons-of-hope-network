@@ -70,7 +70,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section id="newsletter" className="teal-bg section-padding">
+    <section id="newsletter" className="green-bg section-padding">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

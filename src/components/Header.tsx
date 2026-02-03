@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", href: "/", isSection: false },
@@ -73,16 +74,12 @@ const Header = () => {
       <div className="container-narrow mx-auto">
         <div className="flex items-center justify-between py-4 px-4 md:px-8">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-14 h-14 rounded-full border-2 border-primary flex items-center justify-center">
-              <span className="font-heading text-primary font-bold text-lg">BoH</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="font-heading font-bold text-primary text-lg leading-tight">
-                Beacons of Hope
-              </h1>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Network</p>
-            </div>
+          <Link to="/" className="flex items-center gap-2">
+            <img 
+              src={logo} 
+              alt="Beacons of Hope Network" 
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

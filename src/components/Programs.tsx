@@ -31,7 +31,7 @@ const Programs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="teal-bg text-secondary-foreground p-8 md:p-10 text-center card-hover rounded-sm"
+              className="green-bg text-secondary-foreground p-8 md:p-10 text-center card-hover rounded-sm"
             >
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-secondary-foreground/20 flex items-center justify-center">
                 <program.icon className="w-8 h-8" />
