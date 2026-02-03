@@ -84,7 +84,7 @@ const AboutPage = () => {
               About Us
             </h1>
             <p className="text-xl md:text-2xl font-medium opacity-90">
-              Lighting Paths, Transforming Lives
+              We help the community create Lighting pathways to thrive
             </p>
           </motion.div>
         </div>
