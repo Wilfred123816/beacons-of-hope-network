@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { GraduationCap, Users, Heart } from "lucide-react";
+import { BookOpen, Users, Brain, ShieldCheck } from "lucide-react";
 
 const resources = [
   {
-    icon: GraduationCap,
-    title: "Education Empowerment",
+    icon: BookOpen,
+    title: "Learning Hub",
     subtitle: "Breaking Barriers to Learning in Kisii County",
-    content: `In Birongo and Giachere Sub-Counties, many children from low-income households face persistent barriers to education, including poverty, child labor, and low parental awareness. Beacons of Hope Network is working with families, schools, and local leaders to ensure vulnerable children, especially those at risk of dropping out—remain in school and thrive.
+    content: `In Birongo and Gianchere Sub-Counties, many children from low-income households face persistent barriers to education, including poverty, child labor, and low parental awareness. Beacons of Hope Network is working with families, schools, and local leaders to ensure vulnerable children—especially those at risk of dropping out—remain in school and thrive.
 
 Through targeted education support, mentorship, and family sensitization forums, learners receive scholastic materials, psychosocial encouragement, and a protective community environment. Parents are engaged to understand the value of education and their role in sustaining their children's learning journeys. Teachers and community volunteers collaborate to monitor attendance and wellbeing.
 
@@ -16,23 +16,33 @@ As a result, children who were once absent from school are now attending regular
   },
   {
     icon: Users,
-    title: "Youth Empowerment",
-    subtitle: "Turning Risk into Leadership in Kisii County",
-    content: `Youth in Birongo and Giachere Sub-Counties face high unemployment, limited skills opportunities, and growing social pressures. Beacons of Hope Network's youth empowerment initiative responds by transforming vulnerability into leadership and economic potential.
+    title: "Youth Lab",
+    subtitle: "Turning Vulnerability into Leadership",
+    content: `Youth in Birongo and Gianchere Sub-Counties face high unemployment, limited skills opportunities, and growing social pressures. Beacons of Hope Network's youth empowerment initiative responds by transforming vulnerability into leadership and economic potential.
 
-Through mentorship, life-skills training, entrepreneurship exposure, and community service, young people gain confidence, purpose, and practical skills. Youth groups are supported to design small income-generating projects and participate in peace building and community development activities.
+The organization supports adolescents and youth with life skills, mentorship, linkages to vocational training and livelihood opportunities as a transition pathway. We recognize that sustainable economic inclusion requires structured pathways—not just one-time training or seed capital that leaves youth without ongoing support.
 
-Young men and women who were once disengaged are now actively contributing to household income, serving as peer mentors, and advocating for positive social change. The program builds a pipeline of responsible, skilled, and socially conscious youth leaders within Kisii County.`
+Young men and women who were once disengaged are now actively contributing to household income, serving as peer mentors, and advocating for positive social change. Youth who successfully transition to livelihoods become role models and mentors for younger children.`
   },
   {
-    icon: Heart,
+    icon: Brain,
     title: "Mental Health Psychosocial Support (MHPSS)",
     subtitle: "Healing Families, Reducing Stigma",
-    content: `Beacons of Hope Network promotes mental health and psychosocial wellbeing by using sports and learning institutions as safe and trusted platforms to reach children and youth in Kisii County. Many learners experience stress, trauma, and emotional challenges that remain unaddressed due to stigma and limited access to care. By integrating mental health awareness into sports, play, and everyday school life, we normalize wellbeing conversations and encourage early help-seeking in a culturally appropriate way.
+    content: `Beacons of Hope Network promotes mental health and psychosocial wellbeing by using sports and learning institutions as safe and trusted platforms to reach children and youth in Kisii County. Many learners experience stress, trauma, and emotional challenges that remain unaddressed due to stigma and limited access to care.
 
-Through sports-based activities and school partnerships, children build resilience, emotional regulation, and positive coping skills while teachers are trained in mental health literacy and basic psychosocial support. Safe spaces for dialogue and strengthened referral pathways ensure children and families access timely care.
+By integrating mental health awareness into sports, play, and everyday school life, we normalize wellbeing conversations and encourage early help-seeking in a culturally appropriate way. Through sports-based activities and school partnerships, children build resilience, emotional regulation, and positive coping skills while teachers are trained in mental health literacy and basic psychosocial support.
 
 Where higher-level care is needed, Beacons of Hope Network strengthens referral pathways with local health providers, ensuring children and families access appropriate support while remaining connected to their communities.`
+  },
+  {
+    icon: ShieldCheck,
+    title: "Safe Village",
+    subtitle: "Community-Led Child Protection",
+    content: `Beacons of Hope Network strengthens community-led child protection and gender-based violence prevention systems, focusing on prevention, safe reporting, and referral pathways rather than parallel structures.
+
+We build on existing community mechanisms, enhancing their capacity rather than replacing them with external systems that disappear when funding ends. Communities with stronger protection systems create safer environments for learning.
+
+Our approach ensures that protection mechanisms are sustainable and owned by the community itself, creating lasting impact that continues beyond project funding.`
   }
 ];
 
@@ -54,9 +64,9 @@ const ResourcesPage = () => {
               Resources
             </h1>
             <p className="text-lg text-muted-foreground">
-              Explore our key focus areas and learn how we're creating lasting impact 
-              in Birongo and Giachere Sub-Counties through education, youth empowerment, 
-              and mental health initiatives.
+              Explore our four integrated pillars and learn how we're creating lasting impact 
+              in Birongo and Gianchere Sub-Counties through education, youth empowerment, 
+              mental health support, and community protection.
             </p>
           </motion.div>
         </div>
