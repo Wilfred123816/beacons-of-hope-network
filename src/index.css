@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 345 75% 32%;
+    --primary: 210 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 70% 35%;
+    --secondary: 135 70% 42%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 175 70% 35%;
+    --accent: 32 95% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,14 +32,14 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 345 75% 32%;
+    --ring: 210 100% 45%;
 
     --radius: 0.25rem;
 
-    /* Custom design tokens */
-    --maroon: 345 75% 32%;
-    --teal: 175 70% 35%;
-    --gold: 38 92% 50%;
+    /* Custom design tokens - Logo colors */
+    --blue: 210 100% 45%;
+    --harlequin: 135 70% 42%;
+    --orange: 32 95% 52%;
     --cream: 40 33% 96%;
 
     /* Typography */
@@ -62,16 +62,16 @@
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 345 75% 45%;
+    --primary: 210 100% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 70% 45%;
+    --secondary: 135 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 175 70% 45%;
+    --accent: 32 95% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
@@ -79,7 +79,7 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 345 75% 45%;
+    --ring: 210 100% 55%;
   }
 }
 
@@ -115,8 +115,8 @@
     border-radius: 2px;
   }
 
-  .heading-underline-maroon::after {
-    background: linear-gradient(90deg, hsl(var(--maroon)), hsl(var(--maroon)));
+  .heading-underline-blue::after {
+    background: linear-gradient(90deg, hsl(var(--blue)), hsl(var(--blue)));
   }
 
   .section-padding {
@@ -159,12 +159,16 @@
     background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
   }
 
-  .teal-bg {
-    background-color: hsl(var(--teal));
+  .green-bg {
+    background-color: hsl(var(--harlequin));
   }
 
-  .maroon-bg {
-    background-color: hsl(var(--maroon));
+  .blue-bg {
+    background-color: hsl(var(--blue));
+  }
+
+  .orange-bg {
+    background-color: hsl(var(--orange));
   }
 }
 

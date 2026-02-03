@@ -56,7 +56,7 @@ const TakeAction = () => {
           className="text-center mb-12"
         >
           <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground">
-            Take <span className="heading-underline-maroon text-primary">Action</span>
+            Take <span className="heading-underline-blue text-primary">Action</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
             Join us in making a difference. There are many ways you can contribute to our mission of empowering communities.
@@ -71,7 +71,7 @@ const TakeAction = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="maroon-bg text-primary-foreground p-8 text-center card-hover cursor-pointer rounded-sm"
+              className="blue-bg text-primary-foreground p-8 text-center card-hover cursor-pointer rounded-sm"
             >
               <div className="w-14 h-14 mx-auto mb-5 rounded-full border-2 border-primary-foreground/30 flex items-center justify-center">
                 <action.icon className="w-7 h-7" />
