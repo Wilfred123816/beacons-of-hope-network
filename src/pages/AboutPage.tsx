@@ -123,6 +123,96 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Main Objectives */}
+      <section className="py-16 md:py-20 px-4 md:px-8 bg-muted">
+        <div className="container-narrow mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="heading-display text-3xl md:text-4xl text-foreground mb-4">
+              Our Main Objectives
+            </h2>
+          </motion.div>
+          
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              {
+                icon: BookOpen,
+                title: "Advancing Education",
+                description: "Unlocking opportunities for lifelong learning and breaking cycles of exclusion."
+              },
+              {
+                icon: ShieldCheck,
+                title: "Strengthening Protection",
+                description: "Identifying, preventing, and responding to risks affecting children, girls, and women through community-based approaches."
+              },
+              {
+                icon: Brain,
+                title: "Mental Health & Wellness",
+                description: "Building the foundation for resilience and productivity through psychosocial support."
+              },
+              {
+                icon: Users,
+                title: "Empowering Youth",
+                description: "Establishing Youth Lab with digital skills, mentorship, and business grants for sustainable livelihoods."
+              }
+            ].map((objective, index) => (
+              <motion.div
+                key={objective.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-background p-6 rounded-sm flex gap-4"
+              >
+                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                  <objective.icon className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <h3 className="heading-display text-lg mb-2 text-foreground">{objective.title}</h3>
+                  <p className="text-muted-foreground text-sm">{objective.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Innovation */}
+      <section className="py-16 md:py-20 px-4 md:px-8">
+        <div className="container-narrow mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <Lightbulb className="w-10 h-10 text-primary" />
+              <h2 className="heading-display text-3xl md:text-4xl text-foreground">
+                Our Innovation
+              </h2>
+            </div>
+            <div className="bg-secondary text-secondary-foreground p-8 md:p-10 rounded-sm">
+              <p className="leading-relaxed mb-4">
+                Beacons of Hope Network believes in a community-driven model that integrates education, child protection, mental health, and community-driven livelihood into a single pathway for change.
+              </p>
+              <p className="leading-relaxed mb-4">
+                This approach empowers the community and equips vulnerable children, youth, teenage mothers, and people living with disabilities with sustainable future skills.
+              </p>
+              <p className="leading-relaxed font-medium">
+                By co-designing with local realities and community support across mental health, protection, education, and livelihood, the model creates sustainable impacts that continue beyond project funding.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Who We Are */}
       <section className="py-16 md:py-20 px-4 md:px-8 bg-muted">
         <div className="container-narrow mx-auto">
