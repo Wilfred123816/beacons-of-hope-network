@@ -33,19 +33,16 @@ const Footer = () => {
             </div>
             <h3 className="font-semibold text-foreground mb-4">Who We Are</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Beacons of Hope Network is a community-rooted, people-centered organization working to restore dignity, opportunity, and resilience among marginalized populations—particularly in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.
-            </p>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              We are educators, community mobilizers, youth mentors, mental health advocates, and livelihood enablers united by one purpose: to move individuals and families from the margins to the center of opportunity.
+              Beacons of Hope Network is a community-rooted, people-centered CBO working to restore dignity, opportunity, justice and resilience among marginalized populations in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              Guided by our child protection policy, we operate through an integrated development model addressing four interconnected pillars:
+              Our integrated development model addresses four interconnected pillars:
             </p>
             <ul className="text-muted-foreground text-sm leading-relaxed space-y-1 list-disc list-inside">
-              <li>Education empowerment for vulnerable children and families</li>
-              <li>Youth empowerment and leadership development</li>
-              <li>Mental health and psychosocial wellbeing</li>
-              <li>Livelihood support through micro-financing and financial literacy</li>
+              <li>Learning Hub — Education empowerment</li>
+              <li>Youth Lab — Leadership development</li>
+              <li>MHPSS — Mental health & psychosocial support</li>
+              <li>Safe Village — Child protection & GBV prevention</li>
             </ul>
           </div>
 
