@@ -1,40 +1,31 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Users, TrendingUp, Lightbulb, Target, Heart } from "lucide-react";
+import { GraduationCap, Users, TrendingUp, Heart } from "lucide-react";
 import communityImage from "@/assets/community-image.jpg";
 
-const educationStats = [
+const impactStats = [
   {
     icon: GraduationCap,
-    value: "200",
-    label: "vulnerable learners supported annually",
+    value: "20",
+    label: "Learners Supported",
+    description: "Vulnerable children receiving comprehensive educational support annually",
   },
   {
-    icon: Target,
-    value: "≥85%",
-    label: "school attendance among supported learners",
+    icon: Users,
+    value: "100",
+    label: "Children Protection Clubs",
+    description: "Students enrolled for child protection clubs in schools",
   },
   {
     icon: Heart,
-    value: "≥70%",
-    label: "of parents demonstrate improved education support practices",
-  },
-];
-
-const youthStats = [
-  {
-    icon: Users,
-    value: "120",
-    label: "youth trained annually in life skills and entrepreneurship",
+    value: "20",
+    label: "Psychosocial Support",
+    description: "Caregivers supported on counselling and psychosocial support",
   },
   {
     icon: TrendingUp,
-    value: "≥60%",
-    label: "of participants engaged in income-generating activities",
-  },
-  {
-    icon: Lightbulb,
-    value: "≥50%",
-    label: "report increased self-confidence and leadership skills",
+    value: "10",
+    label: "Youth Trained",
+    description: "Young entrepreneurs equipped with business skills each year",
   },
 ];
 
@@ -63,17 +54,13 @@ const Impact = () => {
             OUR IMPACT
           </h2>
           <p className="text-secondary-foreground/90 max-w-4xl mx-auto text-lg leading-relaxed">
-            Beacons of Hope Network has contributed to meaningful, life-changing impact among vulnerable 
-            households and marginalized groups in Birongo and Giachere Sub-Counties through an integrated, 
-            people-centered development approach. By addressing education, youth empowerment, mental health 
-            and wellbeing, and livelihood support simultaneously, the organization has helped families move 
-            from vulnerability toward resilience and self-reliance.
+            Real change, measurable results. Our community-driven approach creates lasting transformation across Kisii County.
           </p>
         </motion.div>
 
-        {/* Education Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {educationStats.map((stat, index) => (
+        {/* Impact Stats */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {impactStats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
@@ -86,43 +73,11 @@ const Impact = () => {
               <div className="heading-display text-3xl md:text-4xl text-primary mb-2">
                 {stat.value}
               </div>
-              <p className="text-muted-foreground text-sm">
+              <h3 className="font-heading font-bold text-foreground mb-2">
                 {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Key Outcomes Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
-          <h3 className="heading-display text-2xl md:text-3xl text-secondary-foreground">
-            Key Outcomes & Indicators
-          </h3>
-        </motion.div>
-
-        {/* Youth Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {youthStats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-background/95 p-6 md:p-8 text-center rounded-sm"
-            >
-              <stat.icon className="w-10 h-10 mx-auto mb-4 text-primary" />
-              <div className="heading-display text-3xl md:text-4xl text-primary mb-2">
-                {stat.value}
-              </div>
+              </h3>
               <p className="text-muted-foreground text-sm">
-                {stat.label}
+                {stat.description}
               </p>
             </motion.div>
           ))}

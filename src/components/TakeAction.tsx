@@ -34,8 +34,8 @@ const actions = [
   },
   {
     icon: Trophy,
-    title: "Run a Marathon for Us",
-    description: "Participate in a marathon that supports our vulnerable children and youth centred initiatives.",
+    title: "Run for a Cause",
+    description: "Join our community marathons and fundraising events.",
   },
   {
     icon: Share2,
