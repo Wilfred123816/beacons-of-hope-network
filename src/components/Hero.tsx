@@ -56,7 +56,7 @@ const Hero = () => {
               </Button>
             </Link>
             <Link to="/programs">
-              <Button variant="outline" className="text-lg px-10 py-6 rounded-sm border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Button className="text-lg px-10 py-6 rounded-sm bg-secondary text-secondary-foreground hover:bg-secondary/90">
                 Explore Our Programs
               </Button>
             </Link>

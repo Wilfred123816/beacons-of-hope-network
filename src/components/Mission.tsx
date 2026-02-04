@@ -15,8 +15,8 @@ const Mission = () => {
           <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
             About <span className="text-secondary">Us</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Beacons of Hope Network is community-centered and youth-aligned, dedicated to creating lasting change.
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <span className="font-semibold text-primary">Champions of Dignity</span> - Restoring worth and respect, <span className="font-semibold text-secondary">Advocates for Inclusion</span> - Breaking barriers to opportunity and <span className="font-semibold text-accent">Drivers of Justice</span> - Creating equitable futures
           </p>
         </motion.div>
 
