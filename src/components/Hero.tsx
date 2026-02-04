@@ -21,16 +21,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="heading-display text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 leading-tight"
+            className="heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight"
           >
-            Beacons of Hope Network
+            <span className="text-white">Beacons of</span>{" "}
+            <span className="text-orange">Hope</span>{" "}
+            <span className="text-harlequin">Network</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-primary-foreground/90 text-xl md:text-2xl font-semibold mb-4"
+            className="text-white/95 text-xl md:text-2xl font-semibold mb-4"
           >
             Educating, Empowering and Inspiring Communities
           </motion.p>
@@ -39,7 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-primary-foreground/80 text-base md:text-lg mb-8"
+            className="text-white/85 text-base md:text-lg mb-8"
           >
             We help the Community create Lighting Pathways to Thrive
           </motion.p>
@@ -51,12 +53,12 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link to="/donate">
-              <Button className="btn-primary text-lg px-10 py-6 rounded-sm">
+              <Button className="btn-accent text-lg px-10 py-6 rounded-lg">
                 Donate Today
               </Button>
             </Link>
             <Link to="/programs">
-              <Button className="text-lg px-10 py-6 rounded-sm bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <Button className="btn-secondary text-lg px-10 py-6 rounded-lg">
                 Explore Our Programs
               </Button>
             </Link>

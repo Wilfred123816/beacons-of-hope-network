@@ -70,7 +70,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section id="newsletter" className="green-bg section-padding">
+    <section id="newsletter" className="section-padding gradient-blue-green">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,9 +79,12 @@ const Newsletter = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-secondary-foreground">
+          <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-white">
             Stay in Touch
           </h2>
+          <p className="text-white/80 mt-3 max-w-xl mx-auto">
+            Join our community and receive updates on our impact and opportunities to get involved.
+          </p>
         </motion.div>
 
         <motion.form
@@ -90,31 +93,31 @@ const Newsletter = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm p-8 rounded-lg"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
             <Input
               placeholder="First Name"
-              className="bg-secondary/80 border-0 text-secondary-foreground placeholder:text-secondary-foreground/60 py-6"
+              className="bg-white/90 border-0 text-foreground placeholder:text-muted-foreground py-6"
               value={formData.firstName}
               onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
             />
             <Input
               placeholder="Last Name"
-              className="bg-secondary/80 border-0 text-secondary-foreground placeholder:text-secondary-foreground/60 py-6"
+              className="bg-white/90 border-0 text-foreground placeholder:text-muted-foreground py-6"
               value={formData.lastName}
               onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
             />
             <Input
               type="email"
               placeholder="Email"
-              className="bg-secondary/80 border-0 text-secondary-foreground placeholder:text-secondary-foreground/60 py-6"
+              className="bg-white/90 border-0 text-foreground placeholder:text-muted-foreground py-6"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             />
             <Input
               placeholder="Phone Number"
-              className="bg-secondary/80 border-0 text-secondary-foreground placeholder:text-secondary-foreground/60 py-6"
+              className="bg-white/90 border-0 text-foreground placeholder:text-muted-foreground py-6"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             />
@@ -122,7 +125,7 @@ const Newsletter = () => {
           
           <Input
             placeholder="Country"
-            className="bg-secondary/80 border-0 text-secondary-foreground placeholder:text-secondary-foreground/60 py-6 mb-6"
+            className="bg-white/90 border-0 text-foreground placeholder:text-muted-foreground py-6 mb-6"
             value={formData.country}
             onChange={(e) => setFormData({ ...formData, country: e.target.value })}
           />
@@ -134,9 +137,9 @@ const Newsletter = () => {
               onCheckedChange={(checked) => 
                 setFormData({ ...formData, consent: checked as boolean })
               }
-              className="mt-1 border-secondary-foreground data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+              className="mt-1 border-white data-[state=checked]:bg-orange data-[state=checked]:border-orange"
             />
-            <label htmlFor="consent" className="text-secondary-foreground text-sm">
+            <label htmlFor="consent" className="text-white text-sm">
               I consent to receiving emails from Beacons of Hope Network. You can change your mind 
               at any time by clicking the unsubscribe link in the footer of any email you receive 
               from us. We will treat your information with respect.
@@ -146,7 +149,7 @@ const Newsletter = () => {
           <Button 
             type="submit" 
             disabled={isSubmitting}
-            className="w-full btn-primary py-6 text-lg rounded-sm"
+            className="w-full btn-accent py-6 text-lg rounded-lg"
           >
             {isSubmitting ? "Signing Up..." : "Sign Up"}
           </Button>

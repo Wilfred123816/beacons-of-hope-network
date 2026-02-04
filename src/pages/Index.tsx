@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Mission from "@/components/Mission";
 import CommunityGallery from "@/components/CommunityGallery";
-import Programs from "@/components/Programs";
 import ProjectsSummary from "@/components/ProjectsSummary";
 import Leadership from "@/components/Leadership";
 import Impact from "@/components/Impact";
@@ -19,7 +18,6 @@ const Index = () => {
         <Hero />
         <Mission />
         <CommunityGallery />
-        <Programs />
         <ProjectsSummary />
         <Leadership />
         <Impact />
