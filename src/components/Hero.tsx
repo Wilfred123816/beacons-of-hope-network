@@ -21,18 +21,18 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="heading-display text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-6 leading-tight"
+            className="heading-display text-4xl md:text-5xl lg:text-6xl text-primary-foreground mb-4 leading-tight"
           >
-            Educating, Empowering, & Inspiring Communities
+            Beacons of Hope Network
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-primary-foreground/90 text-lg md:text-xl mb-4"
+            className="text-primary-foreground/90 text-xl md:text-2xl font-semibold mb-4"
           >
-            <strong>Beacons of Hope Network is community-centered and youth-aligned.</strong>
+            Educating, Empowering and Inspiring Communities
           </motion.p>
           
           <motion.p
@@ -41,19 +41,23 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-primary-foreground/80 text-base md:text-lg mb-8"
           >
-            We envision a future where every young person has access to quality education, 
-            healthcare, and opportunities to become visionary leaders and change-makers in 
-            their communities.
+            We help the Community create Lighting Pathways to Thrive
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
             <Link to="/donate">
               <Button className="btn-primary text-lg px-10 py-6 rounded-sm">
                 Donate Today
+              </Button>
+            </Link>
+            <Link to="/programs">
+              <Button variant="outline" className="text-lg px-10 py-6 rounded-sm border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+                Explore Our Programs
               </Button>
             </Link>
           </motion.div>
