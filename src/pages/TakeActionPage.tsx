@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Heart, Gift, Users, Handshake, GraduationCap, Megaphone, Trophy, Share2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 
 const actions = [
   {
@@ -112,12 +114,11 @@ const TakeActionPage = () => {
             <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
               Every action counts. Whether you volunteer your time, donate resources, or simply share our story, you're helping us create lasting change in communities.
             </p>
-            <a
-              href="mailto:beaconsofhopenetwork@gmail.com"
-              className="inline-block bg-primary-foreground text-secondary px-8 py-4 rounded-sm font-heading font-bold text-lg hover:bg-primary-foreground/90 transition-colors"
-            >
-              Get In Touch
-            </a>
+            <Link to="/contact">
+              <Button className="bg-primary-foreground text-secondary px-8 py-4 rounded-sm font-heading font-bold text-lg hover:bg-primary-foreground/90">
+                Get In Touch
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
