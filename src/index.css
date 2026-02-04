@@ -7,13 +7,13 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    --foreground: 210 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 210 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 210 30% 15%;
 
     --primary: 210 100% 45%;
     --primary-foreground: 0 0% 100%;
@@ -21,8 +21,8 @@
     --secondary: 135 70% 42%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 20% 97%;
+    --muted-foreground: 210 15% 45%;
 
     --accent: 32 95% 52%;
     --accent-foreground: 0 0% 100%;
@@ -30,37 +30,46 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 210 20% 92%;
+    --input: 210 20% 92%;
     --ring: 210 100% 45%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
     /* Custom design tokens - Logo colors */
     --blue: 210 100% 45%;
+    --blue-light: 210 100% 95%;
+    --blue-dark: 210 100% 35%;
     --harlequin: 135 70% 42%;
+    --harlequin-light: 135 70% 95%;
+    --harlequin-dark: 135 70% 32%;
     --orange: 32 95% 52%;
-    --cream: 40 33% 96%;
+    --orange-light: 32 95% 95%;
+    --orange-dark: 32 95% 42%;
+    --cream: 40 33% 97%;
 
     /* Typography */
     --font-heading: 'Oswald', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
-    --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.18);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.15);
+    --shadow-blue: 0 8px 30px hsla(210, 100%, 45%, 0.2);
+    --shadow-green: 0 8px 30px hsla(135, 70%, 42%, 0.2);
+    --shadow-orange: 0 8px 30px hsla(32, 95%, 52%, 0.2);
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 95%;
+    --background: 210 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 210 30% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 210 30% 10%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 210 100% 55%;
     --primary-foreground: 0 0% 100%;
@@ -68,8 +77,8 @@
     --secondary: 135 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 15% 65%;
 
     --accent: 32 95% 58%;
     --accent-foreground: 0 0% 100%;
@@ -77,8 +86,8 @@
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
     --ring: 210 100% 55%;
   }
 }
@@ -111,12 +120,20 @@
   .heading-underline::after {
     content: '';
     @apply absolute left-0 -bottom-1 w-full h-1;
-    background: linear-gradient(90deg, hsl(var(--teal)), hsl(var(--teal)));
+    background: linear-gradient(90deg, hsl(var(--harlequin)), hsl(var(--harlequin)));
     border-radius: 2px;
   }
 
   .heading-underline-blue::after {
     background: linear-gradient(90deg, hsl(var(--blue)), hsl(var(--blue)));
+  }
+
+  .heading-underline-orange::after {
+    background: linear-gradient(90deg, hsl(var(--orange)), hsl(var(--orange)));
+  }
+
+  .heading-underline-green::after {
+    background: linear-gradient(90deg, hsl(var(--harlequin)), hsl(var(--harlequin)));
   }
 
   .section-padding {
@@ -134,15 +151,35 @@
 
   .btn-primary:hover {
     @apply opacity-90 transform scale-105;
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-blue);
   }
 
-  .btn-outline-maroon {
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-3 font-semibold uppercase tracking-wider transition-all duration-300;
+    font-family: var(--font-heading);
+  }
+
+  .btn-secondary:hover {
+    @apply opacity-90 transform scale-105;
+    box-shadow: var(--shadow-green);
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground px-8 py-3 font-semibold uppercase tracking-wider transition-all duration-300;
+    font-family: var(--font-heading);
+  }
+
+  .btn-accent:hover {
+    @apply opacity-90 transform scale-105;
+    box-shadow: var(--shadow-orange);
+  }
+
+  .btn-outline-primary {
     @apply border-2 border-primary text-primary px-6 py-2 font-semibold uppercase tracking-wider transition-all duration-300;
     font-family: var(--font-heading);
   }
 
-  .btn-outline-maroon:hover {
+  .btn-outline-primary:hover {
     @apply bg-primary text-primary-foreground;
   }
 
@@ -156,7 +193,31 @@
   }
 
   .gradient-overlay {
-    background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(135deg, hsla(210, 100%, 25%, 0.85) 0%, hsla(135, 70%, 25%, 0.7) 50%, hsla(32, 95%, 35%, 0.6) 100%);
+  }
+
+  .gradient-blue-green {
+    background: linear-gradient(135deg, hsl(var(--blue)) 0%, hsl(var(--harlequin)) 100%);
+  }
+
+  .gradient-green-orange {
+    background: linear-gradient(135deg, hsl(var(--harlequin)) 0%, hsl(var(--orange)) 100%);
+  }
+
+  .gradient-blue-orange {
+    background: linear-gradient(135deg, hsl(var(--blue)) 0%, hsl(var(--orange)) 100%);
+  }
+
+  .gradient-subtle-blue {
+    background: linear-gradient(180deg, hsl(var(--blue-light)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .gradient-subtle-green {
+    background: linear-gradient(180deg, hsl(var(--harlequin-light)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .gradient-subtle-orange {
+    background: linear-gradient(180deg, hsl(var(--orange-light)) 0%, hsl(var(--background)) 100%);
   }
 
   .green-bg {
@@ -169,6 +230,21 @@
 
   .orange-bg {
     background-color: hsl(var(--orange));
+  }
+
+  .section-blue-accent {
+    background: linear-gradient(180deg, hsl(var(--blue-light)) 0%, hsl(var(--background)) 100%);
+    border-top: 4px solid hsl(var(--blue));
+  }
+
+  .section-green-accent {
+    background: linear-gradient(180deg, hsl(var(--harlequin-light)) 0%, hsl(var(--background)) 100%);
+    border-top: 4px solid hsl(var(--harlequin));
+  }
+
+  .section-orange-accent {
+    background: linear-gradient(180deg, hsl(var(--orange-light)) 0%, hsl(var(--background)) 100%);
+    border-top: 4px solid hsl(var(--orange));
   }
 }
 

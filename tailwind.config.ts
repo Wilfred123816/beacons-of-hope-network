@@ -47,9 +47,21 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        blue: "hsl(var(--blue))",
-        harlequin: "hsl(var(--harlequin))",
-        orange: "hsl(var(--orange))",
+        blue: {
+          DEFAULT: "hsl(var(--blue))",
+          light: "hsl(var(--blue-light))",
+          dark: "hsl(var(--blue-dark))",
+        },
+        harlequin: {
+          DEFAULT: "hsl(var(--harlequin))",
+          light: "hsl(var(--harlequin-light))",
+          dark: "hsl(var(--harlequin-dark))",
+        },
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          light: "hsl(var(--orange-light))",
+          dark: "hsl(var(--orange-dark))",
+        },
         cream: "hsl(var(--cream))",
       },
       fontFamily: {

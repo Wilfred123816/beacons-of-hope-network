@@ -21,48 +21,48 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-foreground text-white">
       <div className="container-narrow mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* About Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-16 h-16 rounded-full border-2 border-primary flex items-center justify-center">
-                <span className="font-heading text-primary font-bold text-xl">BoH</span>
+              <div className="w-16 h-16 rounded-full border-2 border-orange flex items-center justify-center bg-white/10">
+                <span className="font-heading text-orange font-bold text-xl">BoH</span>
               </div>
             </div>
-            <h3 className="font-semibold text-foreground mb-4">Who We Are</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+            <h3 className="font-semibold text-white mb-4">Who We Are</h3>
+            <p className="text-white/70 text-sm leading-relaxed mb-4">
               Beacons of Hope Network is a community-rooted, people-centered CBO working to restore dignity, opportunity, justice and resilience among marginalized populations in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.
             </p>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-3">
+            <p className="text-white/70 text-sm leading-relaxed mb-3">
               Our integrated development model addresses four interconnected pillars:
             </p>
-            <ul className="text-muted-foreground text-sm leading-relaxed space-y-1 list-disc list-inside">
-              <li>Learning Hub — Education empowerment</li>
-              <li>Youth Lab — Leadership development</li>
-              <li>MHPSS — Mental health & psychosocial support</li>
-              <li>Safe Village — Child protection & GBV prevention</li>
+            <ul className="text-white/70 text-sm leading-relaxed space-y-1 list-disc list-inside">
+              <li><span className="text-blue">Learning Hub</span> — Education empowerment</li>
+              <li><span className="text-harlequin">Youth Lab</span> — Leadership development</li>
+              <li><span className="text-orange">MHPSS</span> — Mental health & psychosocial support</li>
+              <li><span className="text-blue">Safe Village</span> — Child protection & GBV prevention</li>
             </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   {link.href.startsWith('/') ? (
                     <Link 
                       to={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-white/70 hover:text-orange transition-colors text-sm"
                     >
                       {link.label}
                     </Link>
                   ) : (
                     <a 
                       href={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-white/70 hover:text-orange transition-colors text-sm"
                     >
                       {link.label}
                     </a>
@@ -74,59 +74,59 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-white mb-4">Contact Us</h3>
             <div className="flex gap-4 mb-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-white/70 hover:text-harlequin transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
-            <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="space-y-3 text-sm text-white/70">
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 text-orange" />
                 <a
                   href="mailto:beaconsofhopenetwork@gmail.com"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-orange transition-colors"
                 >
                   beaconsofhopenetwork@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 text-harlequin" />
                 <div className="flex flex-col gap-1">
-                  <a href="tel:+254729508496" className="hover:text-primary transition-colors">
+                  <a href="tel:+254729508496" className="hover:text-harlequin transition-colors">
                     0729508496
                   </a>
-                  <a href="tel:+254716524476" className="hover:text-primary transition-colors">
+                  <a href="tel:+254716524476" className="hover:text-harlequin transition-colors">
                     0716524476
                   </a>
-                  <a href="tel:+254113596287" className="hover:text-primary transition-colors">
+                  <a href="tel:+254113596287" className="hover:text-harlequin transition-colors">
                     0113596287
                   </a>
                 </div>
               </div>
               <div className="text-sm">
-                <div className="text-muted-foreground">P.O. Box 995-40200, Kisii</div>
+                <div className="text-white/70">P.O. Box 995-40200, Kisii</div>
               </div>
             </div>
           </div>
 
           {/* Newsletter Signup */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Stay Connected</h3>
+            <h3 className="font-semibold text-white mb-4">Stay Connected</h3>
             <div className="space-y-3">
               <div className="grid grid-cols-2 gap-2">
-                <Input placeholder="First Name" className="text-sm" />
-                <Input placeholder="Last Name" className="text-sm" />
+                <Input placeholder="First Name" className="text-sm bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+                <Input placeholder="Last Name" className="text-sm bg-white/10 border-white/20 text-white placeholder:text-white/50" />
               </div>
-              <Input placeholder="Email" type="email" className="text-sm" />
-              <Button className="w-full btn-primary rounded-sm text-sm">
+              <Input placeholder="Email" type="email" className="text-sm bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+              <Button className="w-full btn-accent rounded-lg text-sm">
                 Sign Up for Our Newsletter
               </Button>
             </div>
@@ -134,13 +134,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/60 text-sm">
             © 2026 Beacons of Hope Network | All Rights Reserved
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-primary hover:underline text-sm">Privacy Policy</a>
-            <a href="#" className="text-primary hover:underline text-sm">Cookie Policy</a>
+            <a href="#" className="text-orange hover:underline text-sm">Privacy Policy</a>
+            <a href="#" className="text-harlequin hover:underline text-sm">Cookie Policy</a>
           </div>
         </div>
       </div>

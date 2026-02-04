@@ -13,10 +13,10 @@ const Mission = () => {
           className="text-center mb-12"
         >
           <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-            About <span className="text-secondary">Us</span>
+            About <span className="text-primary">Us</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            <span className="font-semibold text-primary">Champions of Dignity</span> - Restoring worth and respect, <span className="font-semibold text-secondary">Advocates for Inclusion</span> - Breaking barriers to opportunity and <span className="font-semibold text-accent">Drivers of Justice</span> - Creating equitable futures
+            <span className="font-semibold text-blue">Champions of Dignity</span> - Restoring worth and respect, <span className="font-semibold text-harlequin">Advocates for Inclusion</span> - Breaking barriers to opportunity and <span className="font-semibold text-orange">Drivers of Justice</span> - Creating equitable futures
           </p>
         </motion.div>
 
@@ -27,11 +27,12 @@ const Mission = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-card rounded-lg p-8 shadow-lg border border-border"
+            className="bg-card rounded-lg p-8 border-l-4 border-blue"
+            style={{ boxShadow: 'var(--shadow-blue)' }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                <Eye className="w-7 h-7 text-primary" />
+              <div className="w-14 h-14 rounded-full bg-blue flex items-center justify-center">
+                <Eye className="w-7 h-7 text-white" />
               </div>
               <h3 className="heading-display text-2xl md:text-3xl text-foreground">
                 Our Vision
@@ -48,11 +49,12 @@ const Mission = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-card rounded-lg p-8 shadow-lg border border-border"
+            className="bg-card rounded-lg p-8 border-l-4 border-harlequin"
+            style={{ boxShadow: 'var(--shadow-green)' }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center">
-                <Target className="w-7 h-7 text-secondary" />
+              <div className="w-14 h-14 rounded-full bg-harlequin flex items-center justify-center">
+                <Target className="w-7 h-7 text-white" />
               </div>
               <h3 className="heading-display text-2xl md:text-3xl text-foreground">
                 Our Mission
