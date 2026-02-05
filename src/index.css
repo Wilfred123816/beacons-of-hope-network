@@ -100,10 +100,32 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     font-family: var(--font-heading);
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply font-semibold;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
   }
 }
 
@@ -245,6 +267,68 @@
   .section-orange-accent {
     background: linear-gradient(180deg, hsl(var(--orange-light)) 0%, hsl(var(--background)) 100%);
     border-top: 4px solid hsl(var(--orange));
+  }
+
+  /* Modern page backgrounds */
+  .page-wrapper {
+    @apply min-h-screen;
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--background)) 50%, hsl(var(--muted)) 100%);
+  }
+
+  .page-hero {
+    @apply pt-28 pb-16 md:pt-32 md:pb-20;
+    background: linear-gradient(135deg, hsl(var(--blue)) 0%, hsl(var(--blue-dark)) 100%);
+  }
+
+  .page-hero-green {
+    background: linear-gradient(135deg, hsl(var(--harlequin)) 0%, hsl(var(--harlequin-dark)) 100%);
+  }
+
+  .page-hero-orange {
+    background: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--orange-dark)) 100%);
+  }
+
+  .page-section {
+    @apply py-16 md:py-20 px-4 md:px-8;
+  }
+
+  .page-section-alt {
+    @apply py-16 md:py-20 px-4 md:px-8;
+    background: hsl(var(--muted));
+  }
+
+  .page-section-cream {
+    @apply py-16 md:py-20 px-4 md:px-8;
+    background: hsl(var(--cream));
+  }
+
+  .card-modern {
+    @apply bg-card rounded-lg p-6 md:p-8;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .card-modern:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  /* Unified text styles */
+  .text-hero {
+    @apply text-primary-foreground;
+  }
+
+  .text-section-title {
+    @apply text-foreground mb-4;
+  }
+
+  .text-section-subtitle {
+    @apply text-muted-foreground text-lg max-w-2xl mx-auto;
+  }
+
+  .text-body {
+    @apply text-muted-foreground leading-relaxed;
   }
 }
 

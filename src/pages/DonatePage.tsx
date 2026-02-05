@@ -569,12 +569,12 @@ const DonationForm = () => {
 
 const DonatePage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page-wrapper">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 blue-bg text-primary-foreground">
-        <div className="container-narrow mx-auto px-4">
+      <section className="page-hero">
+        <div className="container-narrow mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -584,10 +584,10 @@ const DonatePage = () => {
             <span className="text-primary-foreground/70 text-sm uppercase tracking-widest mb-4 block">
               Donate
             </span>
-            <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl mb-4">
+            <h1 className="text-hero mb-4">
               Your Support Empowers, Restores Dignity and Promotes Resilience
             </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto">
+            <p className="text-primary-foreground/90 text-lg md:text-xl max-w-2xl mx-auto">
               Among marginalized populations
             </p>
           </motion.div>
@@ -595,21 +595,21 @@ const DonatePage = () => {
       </section>
 
       {/* Donation Form Section */}
-      <section className="section-padding">
-        <div className="container-narrow mx-auto px-4">
+      <section className="page-section">
+        <div className="container-narrow mx-auto">
           <div className="max-w-2xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card border border-border rounded-sm p-8 md:p-12 shadow-lg"
+              className="card-modern p-8 md:p-12"
             >
               <div className="text-center mb-8">
-                <h2 className="heading-display text-2xl md:text-3xl text-foreground mb-2">
+                <h2 className="text-section-title">
                   Empowering Youth and Vulnerable Populations
                 </h2>
                 <p className="text-secondary font-semibold">Particularly in Kisii County, with a focus on Birongo and Gianchere Sub-Counties.</p>
-                <p className="text-sm text-muted-foreground mt-4">
+                <p className="text-sm text-body mt-4">
                   If outside of Kenya, we recommend donating via Credit card.
                 </p>
               </div>
@@ -623,8 +623,8 @@ const DonatePage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-muted/50">
-        <div className="container-narrow mx-auto px-4">
+      <section className="page-section-alt">
+        <div className="container-narrow mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -632,10 +632,10 @@ const DonatePage = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="heading-display text-3xl md:text-4xl text-foreground mb-4">
+            <h2 className="text-section-title">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-section-subtitle">
               Have questions about donating? Find answers below or contact us directly.
             </p>
           </motion.div>
@@ -652,12 +652,12 @@ const DonatePage = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-card border border-border rounded-sm px-6 data-[state=open]:shadow-md transition-shadow"
+                  className="card-modern px-6 data-[state=open]:shadow-md transition-shadow"
                 >
                   <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5">
+                  <AccordionContent className="text-body pb-5">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -673,7 +673,7 @@ const DonatePage = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mt-12"
           >
-            <div className="inline-flex items-center gap-3 bg-secondary/10 border border-secondary/20 rounded-sm px-6 py-4">
+            <div className="inline-flex items-center gap-3 bg-secondary/10 border border-secondary/20 rounded-lg px-6 py-4">
               <HelpCircle className="w-6 h-6 text-secondary" />
               <span className="text-foreground font-medium">Have Questions?</span>
               <Link 

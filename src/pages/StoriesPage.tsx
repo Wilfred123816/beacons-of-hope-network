@@ -29,12 +29,12 @@ const StoriesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page-wrapper">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-b from-primary/10 to-background">
-        <div className="container mx-auto px-4">
+      <section className="page-hero page-hero-orange">
+        <div className="container-narrow mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,14 +42,14 @@ const StoriesPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="flex justify-center mb-6">
-              <div className="p-4 bg-primary/10 rounded-full">
-                <Sparkles className="w-12 h-12 text-primary" />
+              <div className="p-4 bg-white/20 rounded-full">
+                <Sparkles className="w-12 h-12 text-accent-foreground" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-hero mb-6">
               Stories of Hope
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-accent-foreground/90">
               Real lives transformed through community support, compassion, and the belief that every person deserves dignity and opportunity.
             </p>
           </motion.div>
@@ -57,8 +57,8 @@ const StoriesPage = () => {
       </section>
 
       {/* Stories Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="page-section">
+        <div className="container-narrow mx-auto">
           <div className="space-y-16">
             {stories.map((story, index) => (
               <motion.div
@@ -79,7 +79,7 @@ const StoriesPage = () => {
                     <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                       {story.title}
                     </h2>
-                    <blockquote className="text-lg text-muted-foreground leading-relaxed border-l-4 border-primary/30 pl-6 italic">
+                    <blockquote className="text-lg text-body leading-relaxed border-l-4 border-primary/30 pl-6 italic">
                       "{story.quote}"
                     </blockquote>
                     <p className="text-lg font-semibold text-primary">
@@ -94,8 +94,8 @@ const StoriesPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-primary/5">
-        <div className="container mx-auto px-4">
+      <section className="page-section-alt">
+        <div className="container-narrow mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -103,15 +103,15 @@ const StoriesPage = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-section-title">
               Be Part of the Next Story
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-section-subtitle mb-8">
               Every contribution creates ripples of change. Join us in writing more stories of transformation, resilience, and hope.
             </p>
             <a
               href="/take-action"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-primary/90 transition-colors"
+              className="btn-primary rounded-lg inline-flex items-center gap-2"
             >
               <Heart className="w-5 h-5" />
               Take Action Today

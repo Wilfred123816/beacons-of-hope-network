@@ -17,29 +17,29 @@ const contactLinks = {
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page-wrapper">
       <Header />
 
       <main className="pt-28">
-        <header className="section-padding border-b border-border">
+        <header className="page-hero pb-12">
           <div className="container-narrow mx-auto px-4 md:px-8">
-            <h1 className="heading-display text-4xl md:text-5xl text-foreground">Contact Us</h1>
-            <p className="mt-4 text-muted-foreground max-w-2xl">
-              Have questions? Reach us using the details below and we’ll get back to you.
+            <h1 className="text-hero">Contact Us</h1>
+            <p className="mt-4 text-primary-foreground/90 max-w-2xl">
+              Have questions? Reach us using the details below and we'll get back to you.
             </p>
           </div>
         </header>
 
-        <section className="section-padding">
-          <div className="container-narrow mx-auto px-4 md:px-8">
+        <section className="page-section">
+          <div className="container-narrow mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="bg-card border border-border rounded-sm p-6">
+              <div className="card-modern">
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-primary" />
                   <div>
                     <h2 className="font-semibold text-foreground">Email</h2>
                     <a
-                      className="text-muted-foreground hover:text-primary transition-colors break-all"
+                      className="text-body hover:text-primary transition-colors break-all"
                       href={`mailto:${contactLinks.email}`}
                     >
                       {contactLinks.email}
@@ -48,7 +48,7 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-sm p-6">
+              <div className="card-modern">
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-primary" />
                   <div>
@@ -57,7 +57,7 @@ const ContactPage = () => {
                       {contactLinks.phones.map((p) => (
                         <a
                           key={p}
-                          className="block text-muted-foreground hover:text-primary transition-colors"
+                          className="block text-body hover:text-primary transition-colors"
                           href={`tel:+254${p.replace(/^0/, "")}`}
                         >
                           {p}
@@ -68,20 +68,20 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <div className="bg-card border border-border rounded-sm p-6">
+              <div className="card-modern">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-primary" />
                   <div>
                     <h2 className="font-semibold text-foreground">Postal Address</h2>
-                    <p className="text-muted-foreground mt-1">{contactLinks.address}</p>
+                    <p className="text-body mt-1">{contactLinks.address}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <section className="mt-10 bg-card border border-border rounded-sm p-6">
+            <section className="mt-10 card-modern">
               <h2 className="font-semibold text-foreground">Social Media</h2>
-              <p className="text-muted-foreground text-sm mt-1">Find us as “beacons of hopenetwork”.</p>
+              <p className="text-body text-sm mt-1">Find us as "beacons of hopenetwork".</p>
 
               <div className="mt-4 flex flex-wrap gap-3">
                 {contactLinks.social.map(({ label, href, Icon }) => (
@@ -90,7 +90,7 @@ const ContactPage = () => {
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-sm border border-border bg-background text-foreground hover:bg-muted transition-colors"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-background text-foreground hover:bg-muted transition-colors"
                   >
                     <Icon className="w-4 h-4 text-primary" />
                     <span className="text-sm font-medium">{label}</span>
@@ -106,5 +106,4 @@ const ContactPage = () => {
     </div>
   );
 };
-
 export default ContactPage;

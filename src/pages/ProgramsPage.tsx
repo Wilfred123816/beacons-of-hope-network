@@ -64,21 +64,21 @@ const programs = [
 
 const ProgramsPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page-wrapper">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 md:px-8 bg-secondary text-secondary-foreground">
-        <div className="container-narrow mx-auto text-center">
+      <section className="page-hero page-hero-green">
+        <div className="container-narrow mx-auto text-center px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="heading-display text-4xl md:text-5xl lg:text-6xl mb-4">
+            <h1 className="text-hero mb-4">
               Our Programs
             </h1>
-            <p className="text-xl md:text-2xl font-medium opacity-90 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl font-medium text-secondary-foreground/90 max-w-3xl mx-auto">
               Four integrated pillars working together to transform lives and build resilient communities
             </p>
           </motion.div>
@@ -86,7 +86,7 @@ const ProgramsPage = () => {
       </section>
 
       {/* Programs List */}
-      <section className="py-16 md:py-20 px-4 md:px-8">
+      <section className="page-section">
         <div className="container-narrow mx-auto">
           <div className="space-y-20">
             {programs.map((program, index) => (
@@ -107,10 +107,10 @@ const ProgramsPage = () => {
                   <h2 className="heading-display text-2xl md:text-3xl text-foreground mb-4">
                     {program.title}
                   </h2>
-                  <p className="text-muted-foreground text-lg mb-4">
+                  <p className="text-body text-lg mb-4">
                     {program.description}
                   </p>
-                  <p className="text-foreground font-medium mb-6 bg-muted p-4 rounded-sm">
+                  <p className="text-foreground font-medium mb-6 bg-muted p-4 rounded-lg">
                     {program.impact}
                   </p>
                   <ul className="space-y-3">
@@ -130,7 +130,7 @@ const ProgramsPage = () => {
                   </ul>
                 </div>
                 <div className={`${index % 2 === 1 ? "md:order-1" : ""}`}>
-                  <div className="aspect-[4/3] rounded-sm overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center card-modern">
                     <div className="text-center p-8">
                       <program.icon className="w-24 h-24 text-primary/40 mx-auto mb-4" />
                       <p className="text-muted-foreground font-medium">{program.title}</p>
@@ -144,7 +144,7 @@ const ProgramsPage = () => {
       </section>
 
       {/* How It All Connects */}
-      <section className="py-16 md:py-20 px-4 md:px-8 bg-muted">
+      <section className="page-section-cream">
         <div className="container-narrow mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -153,10 +153,10 @@ const ProgramsPage = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="heading-display text-3xl md:text-4xl text-foreground mb-6">
+            <h2 className="text-section-title">
               How It All Connects
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+            <p className="text-body text-lg mb-4">
               Our integrated approach creates feedback loops that amplify impact. Families with improved mental health are better able to support their children's education. Communities with stronger protection systems create safer environments for learning.
             </p>
             <p className="text-foreground text-lg leading-relaxed font-medium">
@@ -167,7 +167,7 @@ const ProgramsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 px-4 md:px-8 bg-primary text-primary-foreground">
+      <section className="page-hero py-16 md:py-20 px-4 md:px-8">
         <div className="container-narrow mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -175,15 +175,15 @@ const ProgramsPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="heading-display text-3xl md:text-4xl mb-4">
+            <h2 className="heading-display text-3xl md:text-4xl text-hero mb-4">
               Support Our Programs
             </h2>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Your contribution helps us continue transforming lives through education, mental health support, youth empowerment, and community protection.
             </p>
             <a
               href="/take-action"
-              className="inline-block bg-secondary text-secondary-foreground px-8 py-3 rounded-sm font-medium hover:bg-secondary/90 transition-colors"
+              className="btn-secondary rounded-md inline-block"
             >
               Get Involved
             </a>
