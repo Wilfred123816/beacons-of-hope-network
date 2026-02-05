@@ -48,11 +48,11 @@ Our approach ensures that protection mechanisms are sustainable and owned by the
 
 const ResourcesPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="page-wrapper">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
+      <section className="page-hero">
         <div className="container-narrow mx-auto px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -60,10 +60,10 @@ const ResourcesPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-hero mb-6">
               Resources
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-primary-foreground/90">
               Explore our four integrated pillars and learn how we're creating lasting impact 
               in Birongo and Gianchere Sub-Counties through education, youth empowerment, 
               mental health support, and community protection.
@@ -73,8 +73,8 @@ const ResourcesPage = () => {
       </section>
 
       {/* Resources Content */}
-      <section className="py-16">
-        <div className="container-narrow mx-auto px-4 md:px-8">
+      <section className="page-section">
+        <div className="container-narrow mx-auto">
           <div className="space-y-16">
             {resources.map((resource, index) => (
               <motion.div
@@ -87,11 +87,11 @@ const ResourcesPage = () => {
               >
                 {/* Icon Card */}
                 <div className="lg:w-1/3">
-                  <div className="bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl p-8 flex flex-col items-center text-center">
-                    <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                  <div className="card-modern text-center">
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <resource.icon className="w-10 h-10 text-primary" />
                     </div>
-                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">
+                    <h3 className="text-section-title">
                       {resource.title}
                     </h3>
                     <p className="text-sm text-muted-foreground italic">
@@ -102,8 +102,8 @@ const ResourcesPage = () => {
 
                 {/* Content */}
                 <div className="lg:w-2/3">
-                  <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-                    <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  <div className="card-modern">
+                    <h2 className="text-section-title">
                       {resource.title}
                     </h2>
                     <p className="text-sm text-primary font-medium mb-6">
@@ -111,7 +111,7 @@ const ResourcesPage = () => {
                     </p>
                     <div className="prose prose-lg max-w-none">
                       {resource.content.split('\n\n').map((paragraph, pIndex) => (
-                        <p key={pIndex} className="text-muted-foreground mb-4 last:mb-0 leading-relaxed">
+                        <p key={pIndex} className="text-body mb-4 last:mb-0">
                           {paragraph}
                         </p>
                       ))}
@@ -125,24 +125,24 @@ const ResourcesPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-primary/5">
-        <div className="container-narrow mx-auto px-4 md:px-8 text-center">
+      <section className="page-section-alt">
+        <div className="container-narrow mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-section-title">
               Join Us in Making a Difference
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-section-subtitle mb-8">
               Your support helps us continue our work in education, youth empowerment, 
               and mental health across Kisii County.
             </p>
             <a
               href="/take-action"
-              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
+              className="btn-primary rounded-md inline-block"
             >
               Get Involved
             </a>

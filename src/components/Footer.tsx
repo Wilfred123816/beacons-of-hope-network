@@ -124,7 +124,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">
-            © 2026 Beacons of Hope Network | All Rights Reserved
+            © {new Date().getFullYear()} Beacons of Hope Network | All Rights Reserved
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-orange hover:underline text-sm">Privacy Policy</a>
