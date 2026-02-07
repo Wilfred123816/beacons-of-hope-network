@@ -1,7 +1,10 @@
+import * as React from "react";
 import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, Video } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -20,6 +23,54 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [footerForm, setFooterForm] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
+  const handleFooterSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!footerForm.email.trim()) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address to subscribe.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("newsletter_subscribers").insert({
+        first_name: footerForm.firstName.trim() || null,
+        last_name: footerForm.lastName.trim() || null,
+        email: footerForm.email.trim(),
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Subscribed!",
+        description: "Thank you for staying connected with us.",
+      });
+
+      setFooterForm({ firstName: "", lastName: "", email: "" });
+    } catch (error: any) {
+      toast({
+        title: "Subscription failed",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-foreground text-white">
       <div className="container-narrow mx-auto px-4 md:px-8 py-12 md:py-16">
@@ -49,21 +100,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  {link.href.startsWith('/') ? (
-                    <Link 
-                      to={link.href}
-                      className="text-white/70 hover:text-orange transition-colors text-sm"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a 
-                      href={link.href}
-                      className="text-white/70 hover:text-orange transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  <Link 
+                    to={link.href}
+                    className="text-white/70 hover:text-orange transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -108,16 +150,37 @@ const Footer = () => {
           {/* Stay Connected */}
           <div>
             <h3 className="font-semibold text-white mb-4 text-lg">Stay Connected</h3>
-            <div className="space-y-2">
+            <form onSubmit={handleFooterSubscribe} className="space-y-2">
               <div className="grid grid-cols-2 gap-2">
-                <Input placeholder="First Name" className="text-xs h-9 bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-                <Input placeholder="Last Name" className="text-xs h-9 bg-white/10 border-white/20 text-white placeholder:text-white/50" />
+                <Input
+                  placeholder="First Name"
+                  className="text-xs h-9 bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  value={footerForm.firstName}
+                  onChange={(e) => setFooterForm((prev) => ({ ...prev, firstName: e.target.value }))}
+                />
+                <Input
+                  placeholder="Last Name"
+                  className="text-xs h-9 bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                  value={footerForm.lastName}
+                  onChange={(e) => setFooterForm((prev) => ({ ...prev, lastName: e.target.value }))}
+                />
               </div>
-              <Input placeholder="Email" type="email" className="text-xs h-9 bg-white/10 border-white/20 text-white placeholder:text-white/50" />
-              <Button className="w-full btn-accent rounded-lg text-xs h-9">
-                Subscribe
+              <Input
+                placeholder="Email"
+                type="email"
+                required
+                className="text-xs h-9 bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                value={footerForm.email}
+                onChange={(e) => setFooterForm((prev) => ({ ...prev, email: e.target.value }))}
+              />
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full btn-accent rounded-lg text-xs h-9"
+              >
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 

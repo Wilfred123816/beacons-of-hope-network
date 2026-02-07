@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 // Initialize Stripe - replace with your publishable key
 const stripePromise = loadStripe("pk_test_placeholder");
@@ -125,10 +126,42 @@ const DonationForm = () => {
     return base.toFixed(2);
   };
 
+  const saveDonation = async (stripePaymentMethodId?: string) => {
+    try {
+      const { error } = await supabase.from("donations").insert({
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone || null,
+        amount: parseFloat(getFinalAmount()),
+        currency: "USD",
+        payment_method: paymentMethod,
+        is_recurring: formData.isRecurring,
+        donor_pays_costs: formData.donorPaysCosts,
+        tribute_type: formData.tributeType,
+        tribute_name: formData.tributeName || null,
+        address_line1: formData.address1 || null,
+        address_line2: formData.address2 || null,
+        city: formData.city || null,
+        state: formData.state || null,
+        postal_code: formData.postal || null,
+        country: formData.country || null,
+        newsletter_opt_in: formData.newsletter,
+        sms_consent: formData.smsConsent,
+        stripe_payment_method_id: stripePaymentMethodId || null,
+        status: paymentMethod === "mpesa" ? "pending_mpesa" : "completed",
+      });
+      if (error) console.error("Failed to save donation record:", error);
+    } catch (err) {
+      console.error("Error saving donation:", err);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (paymentMethod === "mpesa") {
+      await saveDonation();
       toast({
         title: "M-Pesa Instructions",
         description: "Please use Paybill: 522522, Account: 1348392789 to complete your donation.",
@@ -175,8 +208,8 @@ const DonationForm = () => {
         throw new Error(error.message);
       }
 
-      // In a real implementation, you would send stripePaymentMethod.id to your backend
-      console.log("Payment method created:", stripePaymentMethod.id);
+      // Save donation record to database
+      await saveDonation(stripePaymentMethod.id);
       
       toast({
         title: "Thank You!",

@@ -41,6 +41,84 @@ export type Database = {
         }
         Relationships: []
       }
+      donations: {
+        Row: {
+          address_line1: string | null
+          address_line2: string | null
+          amount: number
+          city: string | null
+          country: string | null
+          created_at: string
+          currency: string
+          donor_pays_costs: boolean
+          email: string
+          first_name: string
+          id: string
+          is_recurring: boolean
+          last_name: string
+          newsletter_opt_in: boolean
+          payment_method: string
+          phone: string | null
+          postal_code: string | null
+          sms_consent: boolean
+          state: string | null
+          status: string
+          stripe_payment_method_id: string | null
+          tribute_name: string | null
+          tribute_type: string | null
+        }
+        Insert: {
+          address_line1?: string | null
+          address_line2?: string | null
+          amount: number
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          currency?: string
+          donor_pays_costs?: boolean
+          email: string
+          first_name: string
+          id?: string
+          is_recurring?: boolean
+          last_name: string
+          newsletter_opt_in?: boolean
+          payment_method?: string
+          phone?: string | null
+          postal_code?: string | null
+          sms_consent?: boolean
+          state?: string | null
+          status?: string
+          stripe_payment_method_id?: string | null
+          tribute_name?: string | null
+          tribute_type?: string | null
+        }
+        Update: {
+          address_line1?: string | null
+          address_line2?: string | null
+          amount?: number
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          currency?: string
+          donor_pays_costs?: boolean
+          email?: string
+          first_name?: string
+          id?: string
+          is_recurring?: boolean
+          last_name?: string
+          newsletter_opt_in?: boolean
+          payment_method?: string
+          phone?: string | null
+          postal_code?: string | null
+          sms_consent?: boolean
+          state?: string | null
+          status?: string
+          stripe_payment_method_id?: string | null
+          tribute_name?: string | null
+          tribute_type?: string | null
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           created_at: string
