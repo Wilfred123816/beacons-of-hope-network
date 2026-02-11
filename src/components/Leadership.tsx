@@ -7,7 +7,7 @@ const teamMembers = [
     role: "Founder & Executive Director",
     icon: GraduationCap,
     bio: "Evans Ongau Mosima is a visionary and results-driven development leader. Trained as an educator with a Bachelor's and Master's degree in Education, Evans has leveraged his academic foundation to build a holistic leadership approach that integrates education, youth empowerment, mental health, and sustainable livelihoods to drive lasting community transformation.",
-    experience: "He has worked with organizations such as Children of God's Relief Institute and Kidscare Kenya, holding senior roles including School Principal and Program Officer, where he led institutional growth, designed and implemented multi-sectorial programs, and strengthened community and stakeholder engagement. His leadership is marked by the ability to bridge grassroots realities with strategic program design and accountable implementation.",
+    experience: "He has worked with organizations such as Children of God's Relief Institute and Kidscare Kenya, holding senior roles including School Principal and Program Officer, where he led institutional growth, designed and implemented multi-sectorial programs, and strengthened community and stakeholder engagement.",
   },
   {
     name: "Ivan Osano",
@@ -22,23 +22,24 @@ const Leadership = () => {
   return (
     <section id="leadership" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-16"
         >
-          <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-            Meet Our <span className="text-secondary">Leadership</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
+            Our Team
+          </span>
+          <h2 className="heading-display text-[32px] md:text-[40px] text-foreground mb-4">
+            Meet Our Leadership
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our team brings together experienced professionals committed to driving sustainable community transformation through education, empowerment, and holistic development.
+            Experienced professionals committed to driving sustainable community transformation.
           </p>
         </motion.div>
 
-        {/* Team Members */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
@@ -46,25 +47,24 @@ const Leadership = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-muted rounded-sm p-6 md:p-8 hover:shadow-lg transition-shadow"
+              transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+              className="bg-card rounded-xl p-8 border border-border hover:shadow-lg transition-all duration-300"
+              style={{ boxShadow: 'var(--shadow-soft)' }}
             >
-              {/* Profile Header */}
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                  <member.icon className="w-8 h-8 text-secondary-foreground" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <member.icon className="w-7 h-7 text-primary" />
                 </div>
                 <div>
-                  <h3 className="heading-display text-xl md:text-2xl text-foreground mb-1">
+                  <h3 className="heading-display text-xl text-foreground mb-1">
                     {member.name}
                   </h3>
-                  <p className="text-secondary font-medium">{member.role}</p>
+                  <p className="text-secondary font-medium text-sm">{member.role}</p>
                 </div>
               </div>
 
-              {/* Bio */}
-              <div className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
+              <div className="space-y-3">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {member.bio}
                 </p>
                 <p className="text-muted-foreground leading-relaxed text-sm">
@@ -75,13 +75,13 @@ const Leadership = () => {
           ))}
         </div>
 
-        {/* Local Leadership Note */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 bg-secondary/10 rounded-sm p-6 md:p-8 border-l-4 border-secondary"
+          className="mt-12 bg-card rounded-xl p-8 border border-border"
+          style={{ boxShadow: 'var(--shadow-soft)' }}
         >
           <h3 className="heading-display text-xl text-foreground mb-3">
             Committed to Local Leadership
@@ -91,8 +91,7 @@ const Leadership = () => {
             participatory development approach has been rooted in the conviction that sustainable 
             impact and solutions to poverty are only possible when the communities most affected 
             are the real change-makers. We engage community advisory boards, hold feedback sessions, and strengthen 
-            collaborations with like-minded organizations, building trust and credibility 
-            essential to the success of our programs.
+            collaborations with like-minded organizations.
           </p>
         </motion.div>
       </div>

@@ -65,8 +65,8 @@ export default {
         cream: "hsl(var(--cream))",
       },
       fontFamily: {
-        heading: ['Oswald', 'sans-serif'],
-        body: ['Open Sans', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

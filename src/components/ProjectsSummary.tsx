@@ -2,80 +2,60 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Heart, Users, Handshake, BookOpen, Brain, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
     icon: Heart,
     title: "Community Health",
     description: "Removing barriers to accessing quality health care for underserved communities.",
-    color: "blue" as const,
   },
   {
     icon: Users,
     title: "Youth Leadership",
     description: "Equipping youth with education, employment, and advocacy skills to lead change.",
-    color: "harlequin" as const,
   },
   {
     icon: Handshake,
     title: "Powerful Partnerships",
     description: "Bringing together partners to tackle community challenges collectively.",
-    color: "orange" as const,
   },
   {
     icon: BookOpen,
     title: "Child Protection",
     description: "Supporting children through protection clubs and psychosocial services.",
-    color: "blue" as const,
   },
   {
     icon: Brain,
     title: "Mental Health & Psychosocial Support",
     description: "Providing counselling and support to caregivers and vulnerable individuals.",
-    color: "harlequin" as const,
   },
   {
     icon: Briefcase,
     title: "Livelihood Programs",
     description: "Training young entrepreneurs with business skills for sustainable futures.",
-    color: "orange" as const,
   },
 ];
 
-const colorClasses = {
-  blue: {
-    bg: "bg-blue-light",
-    icon: "bg-blue text-white",
-    border: "border-l-4 border-blue",
-  },
-  harlequin: {
-    bg: "bg-harlequin-light",
-    icon: "bg-harlequin text-white",
-    border: "border-l-4 border-harlequin",
-  },
-  orange: {
-    bg: "bg-orange-light",
-    icon: "bg-orange text-white",
-    border: "border-l-4 border-orange",
-  },
-};
-
 const ProjectsSummary = () => {
   return (
-    <section id="projects" className="section-padding bg-cream">
+    <section id="projects" className="section-padding bg-muted">
       <div className="container-narrow mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-16"
         >
-          <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground">
-            Our <span className="heading-underline-green text-secondary">Projects/Programs</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
+            What We Do
+          </span>
+          <h2 className="heading-display text-[32px] md:text-[40px] text-foreground">
+            Our Programs
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Discover our comprehensive programs designed to empower communities and create lasting change in Kisii County and beyond.
+            Comprehensive programs designed to empower communities and create lasting change in Kisii County and beyond.
           </p>
         </motion.div>
 
@@ -86,17 +66,17 @@ const ProjectsSummary = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-card p-6 rounded-lg card-hover ${colorClasses[project.color].border}`}
+              transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+              className="bg-card p-6 rounded-xl border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               style={{ boxShadow: 'var(--shadow-soft)' }}
             >
-              <div className={`w-12 h-12 mb-4 rounded-full ${colorClasses[project.color].icon} flex items-center justify-center`}>
-                <project.icon className="w-6 h-6" />
+              <div className="w-11 h-11 mb-5 rounded-xl bg-primary/10 flex items-center justify-center">
+                <project.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="heading-display text-lg mb-2 text-foreground">
                 {project.title}
               </h3>
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {project.description}
               </p>
             </motion.div>
@@ -108,11 +88,12 @@ const ProjectsSummary = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-10"
+          className="text-center mt-12"
         >
           <Link to="/programs">
-            <Button className="btn-secondary text-lg px-8 py-5 rounded-lg">
+            <Button className="btn-primary text-base px-8 py-5 rounded-xl gap-2">
               Explore All Programs
+              <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
         </motion.div>
